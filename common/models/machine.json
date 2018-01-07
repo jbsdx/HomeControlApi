@@ -1,0 +1,36 @@
+{
+  "name": "Machine",
+  "plural": "Machines",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "hasMAX7219Led": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "host": {
+      "type": "string",
+      "required": true,
+      "default": "localhost"
+    },
+    "hostname": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "services": {
+      "type": "hasMany",
+      "model": "Service",
+      "foreignKey": "",
+      "through": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

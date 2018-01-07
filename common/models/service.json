@@ -1,0 +1,37 @@
+{
+  "name": "Service",
+  "plural": "Services",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "machineId": {
+      "type": "number",
+      "required": true
+    },
+    "port": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "machine": {
+      "type": "belongsTo",
+      "model": "Machine",
+      "foreignKey": "",
+      "required": true
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
