@@ -42,5 +42,9 @@
   "Service": {
     "dataSource": "db",
     "public": true
+  },
+  "MachineService": {
+    "dataSource": "db",
+    "public": true
   }
 }

@@ -11,25 +11,25 @@
       "type": "string",
       "required": true
     },
+    "internal": {
+      "type": "boolean",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
     "description": {
       "type": "string"
-    },
-    "machineId": {
-      "type": "number",
-      "required": true
-    },
-    "port": {
-      "type": "number",
-      "required": true
     }
   },
   "validations": [],
   "relations": {
-    "machine": {
-      "type": "belongsTo",
+    "machines": {
+      "type": "hasMany",
       "model": "Machine",
-      "foreignKey": "",
-      "required": true
+      "foreignKey": "serviceId",
+      "through": "MachineService"
     }
   },
   "acls": [],
