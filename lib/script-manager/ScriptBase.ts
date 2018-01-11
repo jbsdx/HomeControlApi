@@ -28,8 +28,17 @@ export abstract class ScriptBase {
         return this.argument;
     }
     
-    protected validate(): boolean {
-        return this.fileExists(this.path);
+    public async validate(): Promise<any> {
+        let that = this;
+        let promise = new Promise((resolve,reject) => {
+            let exists = that.fileExists(that.path);
+            if (exists) {
+                resolve(true);
+            } else {
+                reject({error: "file not found", file: that.path});
+            }
+        });
+        return promise;
     }
 
     private fileExists(path): boolean {

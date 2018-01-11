@@ -20,3 +20,4 @@ npm-debug.log
 server/*.local.json
 .vscode
 built/*
+dist/*

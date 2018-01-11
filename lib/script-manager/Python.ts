@@ -1,5 +1,5 @@
+import PythonShell = require("python-shell");
 import { IScriptRunner } from "./IScriptRunner";
-import PythonShell = require("python-shell")
 import { ScriptBase } from "./ScriptBase";
 
 export class Python extends ScriptBase implements IScriptRunner {
@@ -14,20 +14,15 @@ export class Python extends ScriptBase implements IScriptRunner {
         return array;
     }
 
-    public validate(): boolean {
-        return super.validate();
-    }
-
     public async execute(): Promise<any> {
-        let that = this;
         let promise = new Promise((resolve, reject) => {
-            let argsArray = that.getArgumentArray();
+            let argsArray = this.getArgumentArray();
             let options = {
                 mode: 'text',
                 pythonOptions: ['-u'],
                 args: argsArray
             };
-            PythonShell.run(that.$path, options, function (err, results) {
+            PythonShell.run(this.$path, options, function (err, results) {
                 if (err) {
                     reject(err);
                 } else {

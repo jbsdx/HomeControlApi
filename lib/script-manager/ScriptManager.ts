@@ -2,6 +2,8 @@ import { IScriptRunner } from "./IScriptRunner";
 
 
 /**
+ * Executes Scripts of type IScriptRunner
+ * 
  * let scriptManager = ScriptManager(new Python());7
  * scriptManager.$path = "pytonScript.py";
  * scriptManager.addArgument("--cascaded", "5")
@@ -16,7 +18,21 @@ export class ScriptManager {
         this.script = script;
     }
 
-    public execute() {
-        
+    public async execute(): Promise<any> {
+        let promise = new Promise((resolve, reject) => {
+            let valid = this.script.validate();
+            valid
+                .then((value) => {
+                    return this.script.execute();
+                })
+                .then((value) => {
+                    resolve(value);
+                })
+                .catch((reason) => {
+                    reject(reason);
+                });
+
+        });
+        return promise;
     }
 }

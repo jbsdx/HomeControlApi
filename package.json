@@ -1,14 +1,13 @@
 {
-  "name": "HomeControlApi",
+  "name": "home-control-api",
   "version": "1.0.0",
   "main": "server/server.js",
   "engines": {
     "node": ">=4"
   },
   "scripts": {
-    "lint": "eslint .",
     "start": "node .",
-    "posttest": "npm run lint && nsp check"
+    "test": "mocha -r ts-node/register test/**/*.ts"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -25,9 +24,15 @@
     "typescript-collections": "^1.2.5"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.0",
+    "@types/mocha": "^2.2.46",
+    "chai": "^4.1.2",
     "eslint": "^3.17.1",
     "eslint-config-loopback": "^8.0.0",
-    "nsp": "^2.1.0"
+    "mocha": "^4.1.0",
+    "nsp": "^2.1.0",
+    "ts-node": "^4.1.0",
+    "typings": "^2.1.1"
   },
   "repository": {
     "type": "",

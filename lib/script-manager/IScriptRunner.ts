@@ -1,5 +1,5 @@
 
 export interface IScriptRunner {
-    validate(): boolean;
+    validate(): Promise<any>;
     execute(): Promise<any>;
 }
