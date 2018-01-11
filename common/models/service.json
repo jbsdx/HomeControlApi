@@ -1,0 +1,37 @@
+{
+  "name": "Service",
+  "plural": "Services",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "internal": {
+      "type": "boolean",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "machines": {
+      "type": "hasMany",
+      "model": "Machine",
+      "foreignKey": "serviceId",
+      "through": "MachineService"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

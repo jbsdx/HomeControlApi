@@ -1,0 +1,56 @@
+{
+  "name": "Machine",
+  "plural": "Machines",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "description": {
+      "type": "string",
+      "required": false,
+      "default": false
+    },
+    "hasMAX7219Led": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "hasMotionSensor": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "hasTemperatureSensor": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "host": {
+      "type": "string",
+      "required": true,
+      "default": "localhost"
+    },
+    "localIP": {
+      "type": "string",
+      "required": true,
+      "default": "0.0.0.0"
+    },
+    "hostname": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "services": {
+      "type": "hasMany",
+      "model": "Service",
+      "foreignKey": "machineId",
+      "through": "MachineService"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

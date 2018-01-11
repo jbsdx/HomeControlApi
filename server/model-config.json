@@ -34,5 +34,17 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Machine": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Service": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MachineService": {
+    "dataSource": "db",
+    "public": true
   }
 }
