@@ -35,9 +35,19 @@
     "typings": "^2.1.1"
   },
   "repository": {
-    "type": "",
-    "url": ""
+    "type": "git",
+    "url": "git+https://github.com/jbsdx/home-control-api.git"
   },
-  "license": "UNLICENSED",
-  "description": "HomeControlApi"
+  "keywords": [
+    "node",
+    "api",
+    "script"
+  ],
+  "author": "Jonas Benz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbsdx/home-control-api/issues"
+  },
+  "homepage": "https://github.com/jbsdx/home-control-api#readme",
+  "description": ""
 }
