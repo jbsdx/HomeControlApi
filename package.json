@@ -20,6 +20,7 @@
     "loopback-connector-mongodb": "^3.3.1",
     "python-shell": "^0.4.0",
     "serve-favicon": "^2.0.1",
+    "shell-manager": "git+https://github.com/jbsdx/shell-manager.git",
     "strong-error-handler": "^2.0.0",
     "typescript-collections": "^1.2.5"
   },
